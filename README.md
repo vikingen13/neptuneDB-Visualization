@@ -21,8 +21,9 @@ Please run the following commands in your local shell.
 
 ``` shell
 # Clone the repository 
-git clone https://github.com/vikingen13/neptuneDB-Visualization-augmented.git
-cd neptuneDB-Visualization-augmented
+git clone https://github.com/vikingen13/neptuneDB-Visualization.git
+cd neptuneDB-Visualization
+cd neptuneDB-Visualization-infra/
 # Set up and activate virtual environment
 python3 -m venv .venv
 source .venv/bin/activate 

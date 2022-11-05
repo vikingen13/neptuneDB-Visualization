@@ -15,14 +15,14 @@ exports.handler = async (event, context, callback) => {
     const graph = new Graph();
     const g = graph.traversal().withRemote(dc);
     try {
-        const result = await g.V().toList()
+        const result = await g.V().valueMap(true).toList()
         const vertex =  result.map(r => {
-            return {'id':r.id,'label':r.label}
+            return {'id':r.get(t.id),'label':r.get('name')[0]}
         })
         const result2 = await g.E().toList()
         const edge = result2.map(r => {
             console.log(r)
-            return {"source": r.outV.id,"target": r.inV.id,'value':r.label}
+            return {"from": r.outV.id,"to": r.inV.id,'label':r.label}
         })
         
         return {statusCode: 200,

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useMemo } from "react";
+import React, { useMemo } from "react";
 import { v4 as uuidv4 } from 'uuid'
 
 import Graph from "react-graph-vis";
@@ -41,9 +41,7 @@ const VisNetwork = ({graph,physics}) => {
           width:3,
           color: "#993333"
         },
-        
-        physics: {enabled:physics},
-        height: (window.innerHeight - 90) + "px"
+          height: (window.innerHeight - 90) + "px"
       };
     
       return (
